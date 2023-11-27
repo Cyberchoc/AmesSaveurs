@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("images/index_background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: rgb(218, 213, 213);
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#small_logo {
+    width: 33%;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.8em;
+    text-decoration: none;
+    padding: 5px;
+}
+.lien:hover {
+    color: #ffbb00;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.lien_detail {
+    font-size: 1em;
+}
+.facebook {
+    padding: 5px;
+    background-color: rgb(47, 74, 131, .5);
+}
+.facebook:hover {
+    background-color: rgb(47, 74, 131, .8);
+}
+.mail {
+    padding: 5px;
+    background-color: rgb(75, 42, 20, .5);
+}
+.mail:hover {
+    background-color: rgb(75, 42, 20, .8);
+}
+.phone {
+    padding: 5px;
+    background-color: rgb(255, 174, 0, .5);
+}
+.phone:hover {
+    background-color: rgb(255, 174, 0, .8);
+}
+footer {
+    width: 100%;
+    margin-top: 20px;
+}
