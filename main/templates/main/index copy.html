@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'main/style.css' %}" rel="stylesheet">
+    <title>Restaurant</title>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <div class="centered">
+        <a href=""><img id="small_logo" src="{% static 'main/images/logo.jpg' %}"/></a>
+
+        <a class="lien" href="{% url 'pizza:index' %}">Pizza</a>
+        <a class="lien" href="{% url 'burger:index' %}">Burger</a>
+        <a class="lien" href="{% url 'salade:index' %}">Salade</a>
+        <a class="lien" href="{% url 'pate:index' %}">Pate</a>
+        <a class="lien" href="{% url 'dessert:index' %}">Dessert</a>
+
+    
+        <footer>
+            <!-- Telephone -->
+            <a
+            class="phone"
+            href="tel:+33985235091"
+            role="button"
+            ><i class="fa fa-phone"></i
+            ></a>
+    
+            <!-- Mail -->
+            <a
+            class="mail"
+            href="mailto:amesetsaveurs@gmail.com"
+            role="button"
+            ><i class="fa fa-envelope"></i
+            ></a>
+
+            <!-- Facebook -->
+            <a
+            class="facebook"
+            href="https://www.facebook.com/amesetsaveurs/"
+            target="_blank"
+            role="button"
+            ><i class="fa fa-facebook-f"></i
+            ></a>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

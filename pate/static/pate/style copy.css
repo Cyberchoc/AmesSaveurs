@@ -1,0 +1,106 @@
+body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/index_background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#small_logo {
+    margin-top: 25px;
+    margin-left: 35px;
+    height: 200px;
+}
+h1 {
+    background-color: #ffbb00;
+    display: inline;
+    padding: 8px 22px;
+}
+
+a {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.8em;
+    text-decoration: none;
+}
+.lien:hover {
+    color: #ffbb00;
+}
+.lien_detail {
+    font-size: 1em;
+}
+.menu_title {
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+.menu_list {
+    margin-left: 30px;
+}
+.menu_list_item {
+    margin: 30px 0px;
+}
+.menu_list_title {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+.menu_list_prix {
+    font-size: 1.8em;
+    color: #ffbb00;
+    margin-left: 8px;
+
+}
+.menu_list_ingredients {
+    color: #b9a879;
+    font-size: 1em;
+    display: block;
+    margin-top: 4px;
+    width: 60%;
+}
+.menu_list_vegetarienne {
+    background-color: #ffbb00;
+    color: #000000;
+    font-size: 0.8em;
+    display: inline-block;
+    padding: 4px 22px;
+    margin-top: 4px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.facebook:hover {
+    background-color: rgb(47, 74, 131, .8);
+}
+.mail:hover {
+    background-color: rgb(75, 42, 20, .8);
+}
+.phone:hover {
+    background-color: rgb(255, 174, 0, .8);
+}
+.facebook {
+    padding: 5px;
+    background-color: rgb(47, 74, 131, .5);
+    display: block;
+    text-align: center;
+}
+.mail {
+    padding: 5px;
+    display: block;
+    text-align: center;
+    background-color: rgb(75, 42, 20, .5);
+}
+.phone {
+    padding: 5px;
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 174, 0, .5);
+}
+footer {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.centered {
+    left: 50%;
+}

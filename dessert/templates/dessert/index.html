@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'dessert/style.css' %}" rel="stylesheet">
+
+    <title>Menu des desserts</title>
+</head>
+<body>
+  <div class="header">
+    <div class="headtop">
+      <div class="row">
+        <div class="col-1 col-s-1 header1"><a href="{% url 'main:index' %}"><img width=100px src="{% static 'main/images/logo.jpg' %}"/></a></div>
+        <div class="col-11 col-s-12 header1"><h1>Ames et Saveurs</h1></div>
+      </div>        
+      <div class="row">
+        <div class="col-12 col-s-12 header1"><p>Restauranet & Fast-Food</p></div>
+      </div>        
+    </div>
+  </div>
+      
+      <div class="row">
+        <div class="col-3 col-s-3 menu">            
+          <ul>
+            {% for dessert in desserts %}
+            <a class="lien" href="{% url 'dessert:dessert_detail' dessert_id=dessert.pk %}"><li>{{dessert.nom}}</li></a>
+            {% endfor %}
+          </ul> 
+        </div>
+      
+        <div class="col-9 col-s-12 text">
+          <h1>Les desserts</h1>
+          <div class="row">
+            {% for dessert in desserts %}
+            <div class="col-5 col-s-5 produits">              
+              <div class="menu_list">
+                  <div class="menu_list_item">
+                    <span class="menu_list_img"><a href="{% url 'dessert:dessert_detail' dessert_id=dessert.pk %}"><img src="{{ dessert.thumbnail }}"></a></span><br>
+                      <span class="menu_list_title">{{dessert.nom}}</span><br>
+                      <span class="menu_list_prix">{{dessert.prix | floatformat:2}} €</span>
+                      <span class="menu_list_ingredients">{{dessert.ingredients}}</span>
+                      {% if dessert.vegetarienne %}
+                      <span class="menu_list_vegetarienne">Végétarienne</span>
+                      {% endif %}
+                  </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      
+      
+      </div>
+      <div class="footer">
+      
+        <div class="headfoot">
+          <a
+              class="phone"
+              href="tel:+33985235091"
+              role="button"
+              ><i class="fa fa-phone"></i
+              ></a>
+          <a
+              class="mail"
+              href="mailto:amesetsaveurs@gmail.com"
+              role="button"
+              ><i class="fa fa-envelope"></i
+              ></a>
+          <a
+              class="facebook"
+              href="https://www.facebook.com/amesetsaveurs/"
+              target="_blank"
+              role="button"
+              ><i class="fa fa-facebook-f"></i>
+            </a>
+            <p class="mention"> Mention légale</p>
+        </div>
+      </div>
+
+    
+</body>
+</html>

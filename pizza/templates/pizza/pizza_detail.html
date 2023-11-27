@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'pizza/style_detail.css' %}" rel="stylesheet">
+
+    <title>Menu des pizzas</title>
+</head>
+<body>
+  <div class="header">
+    <div class="headtop">
+      <div class="row">
+        <div class="col-1 col-s-1 header1"><a href="{% url 'main:index' %}"><img width=100px src="{% static 'main/images/logo.jpg' %}"/></a></div>
+        <div class="col-11 col-s-12 header1"><h1>Ames et Saveurs</h1></div>
+      </div>        
+      <div class="row">
+        <div class="col-12 col-s-12 header1"><p>Restauranet & Fast-Food</p></div>
+      </div>        
+    </div>
+  </div>
+      
+      <div class="row">
+        <div class="col-2 col-s-3 menu">            
+          <ul>
+            <a class="lien" href=""><li>{{pizza.nom}}</li></a>
+          </ul> 
+        </div>
+      
+        <div class="col-10 col-s-12 text">
+          <div class="row">
+            <div class="col-10 col-s-12 produits"> 
+                      <span class="menu_list_title">{{pizza.nom}}</span><br>
+                      <span class="menu_list_prix">{{pizza.prix | floatformat:2}} €</span>
+                      <span class="menu_list_ingredients">{{pizza.ingredients}}</span>
+                      {% if pizza.vegetarienne %}
+                      <span class="menu_list_vegetarienne">Végétarienne</span>
+                      {% endif %}
+                      {% if pizza.pizza_base_tomate %}
+                      <span class="menu_list_vegetarienne">Base tomate</span>
+                      {% endif %}
+                      {% if pizza.pizza_base_creme %}
+                      <span class="menu_list_vegetarienne">Base crème</span>
+                      {% endif %}
+                      <p></p>
+                      <span class="menu_list_img"><img src="http://127.0.0.1:8000/pizza{{ pizza.thumbnail.url }}"></span><br>
+            </div>
+          </div>
+        </div>
+      
+      
+      </div>
+      <div class="footer">
+      
+        <div class="headfoot">
+          <a
+              class="phone"
+              href="tel:+33985235091"
+              role="button"
+              ><i class="fa fa-phone"></i
+              ></a>
+          <a
+              class="mail"
+              href="mailto:amesetsaveurs@gmail.com"
+              role="button"
+              ><i class="fa fa-envelope"></i
+              ></a>
+          <a
+              class="facebook"
+              href="https://www.facebook.com/amesetsaveurs/"
+              target="_blank"
+              role="button"
+              ><i class="fa fa-facebook-f"></i>
+            </a>
+            <p class="mention"> Mention légale</p>
+        </div>
+      </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'main/style.css' %}" rel="stylesheet">
+    <title>Restaurant</title>
+</head>
+<body>
+    <div class="header">
+      <div class="headtop">
+        <div class="row">
+          <div class="col-1 col-s-1 header1"><a href="{% url 'main:index' %}"><img height=100px src="{% static 'main/images/logo.jpg' %}"/></a></div>
+          <div class="col-11 col-s-12 header1"><H1>Ames et Saveurs</H1></div>
+        </div>        
+        <div class="row">
+          <div class="col-12 col-s-12 header1"><p>Restauranet & Fast-Food</p></div>
+        </div>        
+      </div>
+    </div>
+      
+      <div class="row">
+        <div class="col-2 col-s-3 menu">
+          <ul>
+            <a class="lien" href="{% url 'pizza:index' %}"><li>Pizza</li></a>
+            <a class="lien" href="{% url 'burger:index' %}"><li>Burger</li></a>
+            <a class="lien" href="{% url 'salade:index' %}"><li>Salade</li></a>
+            <a class="lien" href="{% url 'pate:index' %}"><li>Pate</li></a>
+            <a class="lien" href="{% url 'dessert:index' %}"><li>Dessert</li></a>
+            <a class="lien" href="{% url 'affiche_menu:index' %}"><li>Notre carte</li></a>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-s-9 text">
+            <h1 class="titre">Bienvenue chez Ames et Saveurs !</h1>
+            <p>"Au cœur du centre-ville de Bapaume, situé au 29 Place Faidherbe.</p>
+            <p>Notre restaurant est l'endroit idéal pour les amateurs de gastronomie française et étrangère. Découvrez une palette de saveurs avec nos plats du jour, nos délicieuses pâtes, hamburgers appétissants, et salades fraîchement préparées, le tout conçu avec des ingrédients frais et cuisiné avec passion dans nos cuisines.</p>
+            <p>Profitez d'une expérience culinaire unique dans notre espace accueillant avec une capacité de trente couverts. Pour ceux qui préfèrent déguster nos délices chez eux, nous offrons un pratique service à emporter. De plus, pour encore plus de commodité, explorez notre service de livraison pour savourer nos plats où que vous soyez.</p>
+            <div class="center_img log"><img width=250px src="{% static 'main/images/logo.jpg' %}"/></div>
+            <p>Navigateur utilisé : {{ request.META.HTTP_USER_AGENT }}</p>
+            <p>Langue préférée : {{ request.META.HTTP_ACCEPT_LANGUAGE }}</p>
+            <p>Adresse IP : {{ request.META.REMOTE_ADDR }}</p>
+            <p>Méthode de requête : {{ request.method }}</p>
+            <p>URL complète : {{ request.build_absolute_uri }}</p>
+            <p>SSL activé : {{ request.is_secure }}</p>            
+            <p>Paramètres GET : {{ request.GET }}</p>
+            <p>Paramètres POST : {{ request.POST }}</p>
+            <p>Cookies : {{ request.COOKIES }}</p>
+            <p>ID de session : {{ request.session.session_key }}</p>
+            <p>Utilisateur : {{ request.user }}</p>
+            <p>Chemin de l'URL : {{ request.path }}</p>
+            <p>Méthode de redirection : {{ request.method }}</p>
+
+            <h1 class="titre">Notre carte</h1>
+            {% for affiche_menu in affiches_menus %}
+              <div class="center_img"><img width=100% src="http://127.0.0.1:8000/affiche_menu{{ affiche_menu.thumbnail.url }}"></div>
+              <p></p>   
+            {% endfor %}         
+        </div>
+      
+        <div class="col-4 col-s-9">          
+
+          <div class="aside">  
+            <div class="slider_all">
+              <div class="slide_all">
+                {% for image in images %}
+                  {{ image }}
+                {% endfor %} 
+              </div>
+            </div>
+          </div>
+
+          <div class="aside">  
+            <h2>Galerie</h2>
+            <div class="box_slider"> 
+              <a href="{% url 'pizza:index' %}"><h3>Pizza</h3></a>
+              <div class="slider">
+                <div class="slide">
+                  {% for pizza in pizzas %}
+                    <div class="content_produit">
+                      <img src="http://127.0.0.1:8000/pizza{{ pizza.thumbnail.url }}" alt="{{ pizza.thumbnail.url }}" /></a>
+                      <a href="{% url 'pizza:pizza_detail' pizza_id=pizza.pk %}"><h4>{{ pizza.nom }}</h4>
+                    </div>
+                  {% endfor %} 
+                </div>
+              </div>
+            </div>
+
+
+            <div class="box_slider"> 
+              <a href="{% url 'burger:index' %}"><h3>Burger</h3> </a>  
+              <div class="slider">
+                <div class="slide">
+                  {% for burger in burgers %}
+                    <div class="content_produit">
+                      <img src="http://127.0.0.1:8000/burger{{ burger.thumbnail.url }}" alt="{{ burger.thumbnail.url }}" /></a>
+                      <a href="{% url 'burger:burger_detail' burger_id=burger.pk %}"><h4>{{ burger.nom }}</h4>
+                    </div>
+                  {% endfor %} 
+                </div>
+              </div>
+            </div>
+
+
+            <div class="box_slider"> 
+              <a href="{% url 'dessert:index' %}"><h3>Dessert</h3></a> 
+              <div class="slider">
+                <div class="slide">
+                  {% for dessert in desserts %}
+                    <div class="content_produit">
+                      <img src="http://127.0.0.1:8000/dessert{{ dessert.thumbnail.url }}" alt="{{ dessert.thumbnail.url }}" /></a>
+                      <a href="{% url 'dessert:dessert_detail' dessert_id=dessert.pk %}"><h4>{{ dessert.nom }}</h4>
+                    </div>
+                  {% endfor %} 
+                </div>
+              </div>
+            </div>
+
+
+            <div class="box_slider">
+              <a href="{% url 'pate:index' %}"><h3>Pate</h3></a>
+              <div class="slider">
+                <div class="slide">
+                  {% for pate in pates %}
+                    <div class="content_produit">
+                      <img src="http://127.0.0.1:8000/pate{{ pate.thumbnail.url }}" alt="{{ burger.thumbnail.url }}" /></a>
+                      <a href="{% url 'pate:pate_detail' pate_id=pate.pk %}"><h4>{{ pate.nom }}</h4>
+                    </div>
+                  {% endfor %} 
+                </div>
+              </div>
+            </div>
+
+            <div class="box_slider">
+              <a href="{% url 'salade:index' %}"><h3>Salade</h3></a>  
+              <div class="slider">
+                <div class="slide">
+                  {% for salade in salades %}
+                    <div class="content_produit">
+                      <img src="http://127.0.0.1:8000/salade{{ salade.thumbnail.url }}" alt="{{ salade.thumbnail.url }}" /></a>
+                      <a href="{% url 'salade:salade_detail' salade_id=salade.pk %}"><h4>{{ salade.nom }}</h4>
+                    </div>
+                  {% endfor %} 
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="aside">            
+            <div class="gmap">
+              <h2>Carte</h2>
+              <p>Utilisez google maps pour nous retrouver.</p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.0352870455763!2d2.8485220157188644!3d50.104346479429104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd51059832ab6f%3A0x49ccea8b426e6eaa!2sAmes%20et%20Saveurs!5e0!3m2!1sfr!2sfr!4v1677109019570!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" border-radius="10% / 50%" ;></iframe>
+              <p class="mention">Pensez à nous laisser votre avis.</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      
+      <div class="footer">
+        
+        <div class="headfoot">
+          <a
+              class="phone"
+              href="tel:+33985235091"
+              role="button"
+              ><i class="fa fa-phone"></i
+              ></a>
+          <a
+              class="mail"
+              href="mailto:amesetsaveurs@gmail.com"
+              role="button"
+              ><i class="fa fa-envelope"></i
+              ></a>
+          <a
+              class="facebook"
+              href="https://www.facebook.com/amesetsaveurs/"
+              target="_blank"
+              role="button"
+              ><i class="fa fa-facebook-f"></i>
+            </a>
+            <p class="mention"> Mention légale</p>
+        </div>
+      </div>
+    </div>
+
+    
+</body>
+</html>
