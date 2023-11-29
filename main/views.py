@@ -80,19 +80,19 @@ def index(request):
 
     # Calcules
     nombre_total_pizzas = len(df_pizza)
-    prix_moyen_pizzas = df_pizza['prix'].mean()
+    prix_moyen_pizzas = round(df_pizza['prix'].mean(), 2)
 
     nombre_total_burger = len(df_burger)
-    prix_moyen_burger = df_burger['prix'].mean()
+    prix_moyen_burger = round(df_burger['prix'].mean(), 2)
 
     nombre_total_salades = len(df_salade)
-    prix_moyen_salades = df_salade['prix'].mean()
+    prix_moyen_salades = round(df_salade['prix'].mean())
 
     nombre_total_desserts = len(df_dessert)
-    prix_moyen_desserts = df_dessert['prix'].mean()
+    prix_moyen_desserts = round(df_dessert['prix'].mean(), 2)
 
     nombre_total_pates = len(df_pate)
-    prix_moyen_pates = df_pate['prix'].mean()
+    prix_moyen_pates = round(df_pate['prix'].mean(), 2)
 
     filtre_vegetarienne_pizzas = (df_pizza['vegetarienne'] == True)
     nombre_vegetarienne_pizzas = df_pizza.loc[filtre_vegetarienne_pizzas, 'nom'].count()
