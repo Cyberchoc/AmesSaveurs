@@ -174,7 +174,11 @@ a {
 }
 
 
-
+.galerie_produits {
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 1);
+  border-radius: 15px 0px 30px 30px;
+  margin-bottom: 10px;
+}
 .box_slider {
   width: 31%;
   display: inline-block;
@@ -250,6 +254,7 @@ a {
 }
 .gmap {
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 1);
+  border-radius: 15px 0px 30px 30px;
   display: block;
 }
 

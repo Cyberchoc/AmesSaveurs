@@ -40,20 +40,7 @@
             <p>Notre restaurant est l'endroit idéal pour les amateurs de gastronomie française et étrangère. Découvrez une palette de saveurs avec nos plats du jour, nos délicieuses pâtes, hamburgers appétissants, et salades fraîchement préparées, le tout conçu avec des ingrédients frais et cuisiné avec passion dans nos cuisines.</p>
             <p>Profitez d'une expérience culinaire unique dans notre espace accueillant avec une capacité de trente couverts. Pour ceux qui préfèrent déguster nos délices chez eux, nous offrons un pratique service à emporter. De plus, pour encore plus de commodité, explorez notre service de livraison pour savourer nos plats où que vous soyez.</p>
             <div class="center_img log"><img width=250px src="{% static 'main/images/logo.jpg' %}"/></div>
-            <p>Navigateur utilisé : {{ request.META.HTTP_USER_AGENT }}</p>
-            <p>Langue préférée : {{ request.META.HTTP_ACCEPT_LANGUAGE }}</p>
-            <p>Adresse IP : {{ request.META.REMOTE_ADDR }}</p>
-            <p>Méthode de requête : {{ request.method }}</p>
-            <p>URL complète : {{ request.build_absolute_uri }}</p>
-            <p>SSL activé : {{ request.is_secure }}</p>            
-            <p>Paramètres GET : {{ request.GET }}</p>
-            <p>Paramètres POST : {{ request.POST }}</p>
-            <p>Cookies : {{ request.COOKIES }}</p>
-            <p>ID de session : {{ request.session.session_key }}</p>
-            <p>Utilisateur : {{ request.user }}</p>
-            <p>Chemin de l'URL : {{ request.path }}</p>
-            <p>Méthode de redirection : {{ request.method }}</p>
-
+            
             <h1 class="titre">Notre carte</h1>
             {% for affiche_menu in affiches_menus %}
               <div class="center_img"><img width=100% src="http://127.0.0.1:8000/affiche_menu{{ affiche_menu.thumbnail.url }}"></div>
@@ -73,77 +60,79 @@
             </div>
           </div>
 
-          <div class="aside">  
-            <h2>Galerie</h2>
-            <div class="box_slider"> 
-              <a href="{% url 'pizza:index' %}"><h3>Pizza</h3></a>
-              <div class="slider">
-                <div class="slide">
-                  {% for pizza in pizzas %}
-                    <div class="content_produit">
-                      <img src="http://127.0.0.1:8000/pizza{{ pizza.thumbnail.url }}" alt="{{ pizza.thumbnail.url }}" /></a>
-                      <a href="{% url 'pizza:pizza_detail' pizza_id=pizza.pk %}"><h4>{{ pizza.nom }}</h4>
-                    </div>
-                  {% endfor %} 
+          <div class="aside">
+            <div class="galerie_produits">
+              <h2>Galerie</h2>
+              <div class="box_slider"> 
+                <a href="{% url 'pizza:index' %}"><h3>Pizza</h3></a>
+                <div class="slider">
+                  <div class="slide">
+                    {% for pizza in pizzas %}
+                      <div class="content_produit">
+                        <img src="http://127.0.0.1:8000/pizza{{ pizza.thumbnail.url }}" alt="{{ pizza.thumbnail.url }}" /></a>
+                        <a href="{% url 'pizza:pizza_detail' pizza_id=pizza.pk %}"><h4>{{ pizza.nom }}</h4>
+                      </div>
+                    {% endfor %} 
+                  </div>
                 </div>
               </div>
-            </div>
 
 
-            <div class="box_slider"> 
-              <a href="{% url 'burger:index' %}"><h3>Burger</h3> </a>  
-              <div class="slider">
-                <div class="slide">
-                  {% for burger in burgers %}
-                    <div class="content_produit">
-                      <img src="http://127.0.0.1:8000/burger{{ burger.thumbnail.url }}" alt="{{ burger.thumbnail.url }}" /></a>
-                      <a href="{% url 'burger:burger_detail' burger_id=burger.pk %}"><h4>{{ burger.nom }}</h4>
-                    </div>
-                  {% endfor %} 
+              <div class="box_slider"> 
+                <a href="{% url 'burger:index' %}"><h3>Burger</h3> </a>  
+                <div class="slider">
+                  <div class="slide">
+                    {% for burger in burgers %}
+                      <div class="content_produit">
+                        <img src="http://127.0.0.1:8000/burger{{ burger.thumbnail.url }}" alt="{{ burger.thumbnail.url }}" /></a>
+                        <a href="{% url 'burger:burger_detail' burger_id=burger.pk %}"><h4>{{ burger.nom }}</h4>
+                      </div>
+                    {% endfor %} 
+                  </div>
                 </div>
               </div>
-            </div>
 
 
-            <div class="box_slider"> 
-              <a href="{% url 'dessert:index' %}"><h3>Dessert</h3></a> 
-              <div class="slider">
-                <div class="slide">
-                  {% for dessert in desserts %}
-                    <div class="content_produit">
-                      <img src="http://127.0.0.1:8000/dessert{{ dessert.thumbnail.url }}" alt="{{ dessert.thumbnail.url }}" /></a>
-                      <a href="{% url 'dessert:dessert_detail' dessert_id=dessert.pk %}"><h4>{{ dessert.nom }}</h4>
-                    </div>
-                  {% endfor %} 
+              <div class="box_slider"> 
+                <a href="{% url 'dessert:index' %}"><h3>Dessert</h3></a> 
+                <div class="slider">
+                  <div class="slide">
+                    {% for dessert in desserts %}
+                      <div class="content_produit">
+                        <img src="http://127.0.0.1:8000/dessert{{ dessert.thumbnail.url }}" alt="{{ dessert.thumbnail.url }}" /></a>
+                        <a href="{% url 'dessert:dessert_detail' dessert_id=dessert.pk %}"><h4>{{ dessert.nom }}</h4>
+                      </div>
+                    {% endfor %} 
+                  </div>
                 </div>
               </div>
-            </div>
 
 
-            <div class="box_slider">
-              <a href="{% url 'pate:index' %}"><h3>Pate</h3></a>
-              <div class="slider">
-                <div class="slide">
-                  {% for pate in pates %}
-                    <div class="content_produit">
-                      <img src="http://127.0.0.1:8000/pate{{ pate.thumbnail.url }}" alt="{{ burger.thumbnail.url }}" /></a>
-                      <a href="{% url 'pate:pate_detail' pate_id=pate.pk %}"><h4>{{ pate.nom }}</h4>
-                    </div>
-                  {% endfor %} 
+              <div class="box_slider">
+                <a href="{% url 'pate:index' %}"><h3>Pate</h3></a>
+                <div class="slider">
+                  <div class="slide">
+                    {% for pate in pates %}
+                      <div class="content_produit">
+                        <img src="http://127.0.0.1:8000/pate{{ pate.thumbnail.url }}" alt="{{ burger.thumbnail.url }}" /></a>
+                        <a href="{% url 'pate:pate_detail' pate_id=pate.pk %}"><h4>{{ pate.nom }}</h4>
+                      </div>
+                    {% endfor %} 
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="box_slider">
-              <a href="{% url 'salade:index' %}"><h3>Salade</h3></a>  
-              <div class="slider">
-                <div class="slide">
-                  {% for salade in salades %}
-                    <div class="content_produit">
-                      <img src="http://127.0.0.1:8000/salade{{ salade.thumbnail.url }}" alt="{{ salade.thumbnail.url }}" /></a>
-                      <a href="{% url 'salade:salade_detail' salade_id=salade.pk %}"><h4>{{ salade.nom }}</h4>
-                    </div>
-                  {% endfor %} 
+              <div class="box_slider">
+                <a href="{% url 'salade:index' %}"><h3>Salade</h3></a>  
+                <div class="slider">
+                  <div class="slide">
+                    {% for salade in salades %}
+                      <div class="content_produit">
+                        <img src="http://127.0.0.1:8000/salade{{ salade.thumbnail.url }}" alt="{{ salade.thumbnail.url }}" /></a>
+                        <a href="{% url 'salade:salade_detail' salade_id=salade.pk %}"><h4>{{ salade.nom }}</h4>
+                      </div>
+                    {% endfor %} 
+                  </div>
                 </div>
               </div>
             </div>
