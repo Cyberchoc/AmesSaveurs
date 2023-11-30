@@ -26,11 +26,29 @@
         <div class="col-2 col-s-3 menu">
           <ul>
             <a class="lien" href="{% url 'pizza:index' %}"><li>Pizza</li></a>
+            <div class="stat">
+              <p>Nombre total de pizzas : {{ nombre_total_pizzas }}</p>
+            </div>
             <a class="lien" href="{% url 'burger:index' %}"><li>Burger</li></a>
+            <div class="stat">
+              <p>Nombre total de burgers : {{ nombre_total_burger }}</p>
+            </div>
             <a class="lien" href="{% url 'salade:index' %}"><li>Salade</li></a>
+            <div class="stat">
+              <p>Nombre total de salades : {{ nombre_total_salades }}</p>
+            </div>
             <a class="lien" href="{% url 'pate:index' %}"><li>Pate</li></a>
+            <div class="stat">
+              <p>Nombre total de pates : {{ nombre_total_pates }}</p>
+            </div>
             <a class="lien" href="{% url 'dessert:index' %}"><li>Dessert</li></a>
+            <div class="stat">
+              <p>Nombre total de desserts : {{ nombre_total_desserts }}</p>
+            </div>
             <a class="lien" href="{% url 'affiche_menu:index' %}"><li>Notre carte</li></a>
+            <div class="stat">
+              <p>Nombre total de pizzas : {{ nombre_total_pizzas }}</p>
+            </div>
           </ul>
         </div>
       
@@ -49,33 +67,6 @@
         </div>
       
         <div class="col-4 col-s-9">          
-
-          <div class="aside">  
-            <div class="slider_all">
-              <div class="slide_all">
-                <h2>Pizza</h2>
-                <p>Prix moyen : {{ prix_moyen_pizzas }}</p>
-                <p>Nombre total de pizzas : {{ nombre_total_pizzas }}</p>
-                <p>Nombre total de pizzas vegetarienne : {{ nombre_vegetarienne_pizzas }}</p>
-                <h2>Burger</h2>
-                <p>Prix moyen : {{ prix_moyen_burger }}</p>
-                <p>Nombre total de burgers : {{ nombre_total_burger }}</p>
-                <p>Nombre total de burgers vegetarien : {{ nombre_vegetarienne_burgers }}</p>
-                <h2>Salade</h2>
-                <p>Prix moyen : {{ prix_moyen_salades }}</p>
-                <p>Nombre total de salades : {{ nombre_total_salades }}</p>
-                <p>Nombre total de salades vegetarienne : {{ nombre_vegetarienne_salades }}</p>
-                <h2>Pate</h2>
-                <p>Prix moyen : {{ prix_moyen_pates }}</p>
-                <p>Nombre total de pates : {{ nombre_total_pates }}</p>
-                <p>Nombre total de pates vegetarienne : {{ nombre_vegetarienne_pates }}</p>
-                <h2>Dessert</h2>
-                <p>Prix moyen : {{ prix_moyen_desserts }}</p>
-                <p>Nombre total de desserts : {{ nombre_total_desserts }}</p>
-                <p>Nombre total de desserts vegetarien : {{ nombre_vegetarienne_desserts }}</p>
-              </div>
-            </div>
-          </div>
 
           <div class="aside">
             <div class="galerie_produits">

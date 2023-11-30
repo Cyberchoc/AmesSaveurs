@@ -241,6 +241,15 @@ a {
 }
 
 
+.stat {
+  background-color: rgb(75, 42, 20, .8);
+  color: #ffffff;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: auto;
+  font-size: 0.7em;
+}
+ 
 .aside {
   
   border-radius: 15px 0px 30px 30px;
