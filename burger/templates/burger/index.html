@@ -29,7 +29,12 @@
             {% for burger in burgers %}
             <a class="lien" href="{% url 'burger:burger_detail' burger_id=burger.pk %}"><li>{{burger.nom}}</li></a>
             {% endfor %}
-          </ul> 
+          </ul>
+          
+          <h2>Burger</h2>
+          <p>Prix moyen : {{ prix_moyen_burger }}</p>
+          <p>Nombre total de burgers : {{ nombre_total_burger }}</p>
+          <p>Nombre total de burgers vegetarien : {{ nombre_vegetarienne_burgers }}</p> 
         </div>
       
         <div class="col-9 col-s-12 text">
