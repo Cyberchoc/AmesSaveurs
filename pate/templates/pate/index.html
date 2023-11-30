@@ -30,6 +30,11 @@
             <a class="lien" href="{% url 'pate:pate_detail' pate_id=pate.pk %}"><li>{{pate.nom}}</li></a>
             {% endfor %}
           </ul> 
+          <div class="stat">
+            <p>Prix moyen : {{ prix_moyen_pates }} €</p>
+            <p>Nombre total de pates : {{ nombre_total_pates }}</p>
+            <p>Nombre total de pates vegetarienne : {{ nombre_vegetarienne_pates }}</p>
+          </div>
         </div>
       
         <div class="col-9 col-s-12 text">

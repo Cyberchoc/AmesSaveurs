@@ -30,6 +30,11 @@
             <a class="lien" href="{% url 'dessert:dessert_detail' dessert_id=dessert.pk %}"><li>{{dessert.nom}}</li></a>
             {% endfor %}
           </ul> 
+          <div class="stat">
+            <p>Prix moyen : {{ prix_moyen_desserts }} €</p>
+            <p>Nombre total de desserts : {{ nombre_total_desserts }}</p>
+            <p>Nombre total de desserts vegetarien : {{ nombre_vegetarienne_desserts }}</p>
+          </div>
         </div>
       
         <div class="col-9 col-s-12 text">

@@ -106,6 +106,12 @@
   }
   
   
+.stat {
+  background-color: rgb(75, 42, 20, .8);
+  color: #ffffff;
+  padding: 10px;
+}
+ 
   a {
     color: white;
     text-decoration: none;
