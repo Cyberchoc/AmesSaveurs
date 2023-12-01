@@ -25,30 +25,12 @@
       <div class="row">
         <div class="col-2 col-s-3 menu">
           <ul>
-            <a class="lien" href="{% url 'pizza:index' %}"><li>Pizza</li></a>
-            <div class="stat">
-              <p>Nombre total de pizzas : {{ nombre_total_pizzas }}</p>
-            </div>
-            <a class="lien" href="{% url 'burger:index' %}"><li>Burger</li></a>
-            <div class="stat">
-              <p>Nombre total de burgers : {{ nombre_total_burger }}</p>
-            </div>
-            <a class="lien" href="{% url 'salade:index' %}"><li>Salade</li></a>
-            <div class="stat">
-              <p>Nombre total de salades : {{ nombre_total_salades }}</p>
-            </div>
-            <a class="lien" href="{% url 'pate:index' %}"><li>Pate</li></a>
-            <div class="stat">
-              <p>Nombre total de pates : {{ nombre_total_pates }}</p>
-            </div>
-            <a class="lien" href="{% url 'dessert:index' %}"><li>Dessert</li></a>
-            <div class="stat">
-              <p>Nombre total de desserts : {{ nombre_total_desserts }}</p>
-            </div>
+            <a class="lien" href="{% url 'pizza:index' %}"><li>{{ nombre_total_pizzas }} Pizzas</li></a>
+            <a class="lien" href="{% url 'burger:index' %}"><li>{{ nombre_total_burger }} Burgers</li></a>
+            <a class="lien" href="{% url 'salade:index' %}"><li>{{ nombre_total_salades }} Salades</li></a>
+            <a class="lien" href="{% url 'pate:index' %}"><li>{{ nombre_total_pates }} Pates</li></a>
+            <a class="lien" href="{% url 'dessert:index' %}"><li>{{ nombre_total_desserts }} Desserts</li></a>
             <a class="lien" href="{% url 'affiche_menu:index' %}"><li>Notre carte</li></a>
-            <div class="stat">
-              <p>Nombre total de pizzas : {{ nombre_total_pizzas }}</p>
-            </div>
           </ul>
         </div>
       

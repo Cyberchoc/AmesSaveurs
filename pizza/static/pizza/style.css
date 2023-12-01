@@ -138,6 +138,7 @@
     background-color: rgb(75, 42, 20, .8);
     color: #ffffff;
     padding: 10px;
+    height: auto;
   }
    
   .menu_list_img img {

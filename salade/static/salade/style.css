@@ -124,6 +124,7 @@
     background-color: rgb(75, 42, 20, .8);
     color: #ffffff;
     padding: 10px;
+    height: auto;
   }
   .text {
     background-color: rgba(0, 0, 0, 0.5);
