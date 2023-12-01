@@ -372,7 +372,7 @@ color: #ffffff;
 a.back-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: rgb(255, 174, 0, .5); /* Couleur de fond du bouton */
+  background-color: rgb(255, 174, 0, .7); /* Couleur de fond du bouton */
   color: #fff; /* Couleur du texte */
   text-decoration: none;
   border-radius: 5px; /* Coins arrondis */
@@ -381,7 +381,7 @@ a.back-link {
 }
 
 a.back-link:hover {
-  background-color: rgb(255, 174, 0, .8); /* Couleur de fond modifiée au survol */
+  background-color: rgb(255, 174, 0, 1); /* Couleur de fond modifiée au survol */
 }
 
   /* For mobile phones: */

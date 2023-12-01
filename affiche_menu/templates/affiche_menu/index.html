@@ -46,6 +46,20 @@
             </div>
             {% endfor %}
           </div>
+          
+             
+          <div class="container">
+            {% for affiche_menu in affiches_menus %}
+              <p>{{ affiche_menu.nom }}</p>
+              <p><a class="back-link" href="http://127.0.0.1:8000/affiche_menu{{ affiche_menu.thumbnail.url }}" download>Télécharger le Menu</a></p>
+            {% endfor %}  
+          </div> 
+          
+          <div class="container">
+            <a href="javascript:void(0);" onclick="window.history.back();" class="back-link">Retour</a>
+          </div>
+          
+
         </div>
       
       
