@@ -105,6 +105,23 @@
     color: white;
   }
   
+.container {
+  text-align: center; /* Centre le contenu horizontalement */
+}
+a.back-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(255, 174, 0, .5); /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte */
+  text-decoration: none;
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s ease; /* Effet de transition sur le survol */
+  text-align: center;
+}
+
+a.back-link:hover {
+  background-color: rgb(255, 174, 0, .8); /* Couleur de fond modifiée au survol */
+}
   
   a {
     color: white;

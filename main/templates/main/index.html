@@ -45,7 +45,12 @@
             {% for affiche_menu in affiches_menus %}
               <div class="center_img"><img width=100% src="http://127.0.0.1:8000/affiche_menu{{ affiche_menu.thumbnail.url }}"></div>
               <p></p>   
-            {% endfor %}         
+            {% endfor %}   
+            
+            <div class="container">
+              <a href="javascript:void(0);" onclick="window.history.back();" class="back-link">Retour</a>
+            </div>
+      
         </div>
       
         <div class="col-4 col-s-9">          
