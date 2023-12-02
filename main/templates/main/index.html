@@ -56,8 +56,22 @@
             
         </div>
       
-        <div class="col-4 col-s-9">          
+        <div class="col-4 col-s-9"> 
+          <div class="aside"> 
+            <form method="get" action="{% url 'main:index' %}">
+              <input type="text" name="q" placeholder="Rechercher...">
+              <button type="submit">Rechercher</button>
+            </form>
 
+            {% if results %}
+              <h2>Résultats pour "{{ query }}"</h2>
+            {% endif %}
+            
+            {% for result in results %}
+              <h3>{{ result.type }} - {{ result.nom }} - {{ result.prix }} €</h3>
+              <p>{{ result.ingredients }}</p>
+            {% endfor %}
+          </div>
           <div class="aside">
             <div class="galerie_produits">
               <h2>Galerie</h2>
