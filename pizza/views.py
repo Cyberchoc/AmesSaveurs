@@ -24,11 +24,23 @@ def index(request):
 
     filtre_vegetarienne_pizzas = (df_pizza['vegetarienne'] == True)
     nombre_vegetarienne_pizzas = df_pizza.loc[filtre_vegetarienne_pizzas, 'nom'].count()
+    
+    filtre_stock_pizzas = (df_pizza['stock'] == True)
+    nombre_stock_pizzas = df_pizza.loc[filtre_stock_pizzas, 'nom'].count()
+    
+    filtre_base_tomate_pizzas = (df_pizza['pizza_base_tomate'] == True)
+    nombre_base_tomate_pizzas = df_pizza.loc[filtre_base_tomate_pizzas, 'nom'].count()
+    
+    filtre_base_creme_pizzas = (df_pizza['pizza_base_creme'] == True)
+    nombre_base_creme_pizzas = df_pizza.loc[filtre_base_creme_pizzas, 'nom'].count()
 
     return render(request, 'pizza/index.html', {'pizzas' : pizzas,
                                                 'prix_moyen_pizzas' : prix_moyen_pizzas,
                                                'nombre_total_pizzas' : nombre_total_pizzas,
-                                               'nombre_vegetarienne_pizzas' : nombre_vegetarienne_pizzas})
+                                               'nombre_stock_pizzas' : nombre_stock_pizzas,
+                                               'nombre_vegetarienne_pizzas' : nombre_vegetarienne_pizzas,
+                                               'nombre_base_tomate_pizzas' : nombre_base_tomate_pizzas,
+                                               'nombre_base_creme_pizzas' : nombre_base_creme_pizzas})
 
 def pizza_detail(request, pizza_id):
     pizza = get_object_or_404(Pizza, pk=pizza_id)
