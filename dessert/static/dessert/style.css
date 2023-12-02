@@ -114,7 +114,7 @@
 }
  
 .container {
-  text-align: center; /* Centre le contenu horizontalement */
+  text-align: right; /* Centre le contenu horizontalement */
 }
 a.back-link {
   display: inline-block;
