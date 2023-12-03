@@ -30,12 +30,14 @@
             <a class="lien" href="{% url 'pizza:pizza_detail' pizza_id=pizza.pk %}"><li>{{pizza.nom}}</li></a>
             {% endfor %}
           </ul> 
+          
+
           <div class="stat">
             <p>Prix moyen : {{ prix_moyen_pizzas }} €</p>
-            <p>Nombre total de pizzas : {{ nombre_total_pizzas }}</p>
-            <p>Nombre total de pizzas vegetarienne : {{ nombre_vegetarienne_pizzas }}</p>
-            <p>Nombre total de pizzas à base de tomate : {{ nombre_base_tomate_pizzas }}</p>
-            <p>Nombre total de pizzas à base de crème : {{ nombre_base_creme_pizzas }}</p>
+            <p>Total de pizzas : {{ nombre_total_pizzas }}</p>
+            <p>Total de pizzas vegetarienne : {{ nombre_vegetarienne_pizzas }}</p>
+            <p>Total de pizzas à base de tomate : {{ nombre_base_tomate_pizzas }}</p>
+            <p>Total de pizzas à base de crème : {{ nombre_base_creme_pizzas }}</p>
           </div>
         </div>
       

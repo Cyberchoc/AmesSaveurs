@@ -26,17 +26,12 @@
 }
 .header {
   background-color: rgb(255, 174, 0, .9);
-  /*background-image: url("images/banniere.jpg");*/
-  background-repeat: no-repeat;
-  background-position: center;  
-  background-size: contain;
   color: #ffffff;
   padding: 5px;
-  margin: 5px;
 }
+
 .headtop {
   position: relative;
-  padding: 5px;
   min-width: 300px;
   height: 100%;
   border: 10px solid transparent;
@@ -69,10 +64,11 @@
     width: 80%;
   }
 }
+
 .header1 h1 {
   padding: 0;
   margin: 0;
-  text-align: center;
+  text-align: center;  
 }
 
 .header1 p {
@@ -85,11 +81,9 @@
   margin: 0;
   display: inline-block;
 }
-
 .header1 img{
-  border-radius: 10px 100px / 120px;  
-  padding: 5px;  
-}
+  border-radius: 10px 100px / 120px;
+  }
 
 .menu ul {
   list-style-type: none;
@@ -369,7 +363,14 @@ color: #ffffff;
 .search {
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 1);
   padding: 10px;
-  border-radius: 15px 0px 30px 30px;
+  background-color: rgb(75, 42, 20, .8);;
+  text-align: center;
+}
+.search h2{
+  color: #fff;
+}
+.search h3{
+  color: rgb(255, 174, 0, .9);
 }
 .container {
   text-align: center; /* Centre le contenu horizontalement */

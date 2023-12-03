@@ -10,28 +10,46 @@
     <title>Restaurant</title>
 </head>
 <body>
-    <div class="header">
-      <div class="headtop">
-        <div class="row">
-          <div class="col-1 col-s-1 header1"><a href="{% url 'main:index' %}"><img height=100px src="{% static 'main/images/logo.jpg' %}"/></a></div>
-          <div class="col-11 col-s-12 header1"><H1>Ames et Saveurs</H1></div>
-        </div>        
-        <div class="row">
-          <div class="col-12 col-s-12 header1"><p>Restauranet & Fast-Food</p></div>
-        </div>        
-      </div>
+  <div class="header">
+    <div class="headtop">
+      <div class="row">
+        <div class="col-1 col-s-1 header1"><a href="{% url 'main:index' %}"><img width=100px src="{% static 'main/images/logo.jpg' %}"/></a></div>
+        <div class="col-11 col-s-12 header1"><h1>Ames et Saveurs</h1></div>
+      </div>        
+      <div class="row">
+        <div class="col-12 col-s-12 header1"><p>Restauranet & Fast-Food</p></div>
+      </div>        
     </div>
+  </div>
       
       <div class="row">
         <div class="col-2 col-s-3 menu">
           <ul>
+            <a class="lien" href="{% url 'affiche_menu:index' %}"><li>Notre carte</li></a>
             <a class="lien" href="{% url 'pizza:index' %}"><li>{{ nombre_total_pizzas }} Pizzas</li></a>
             <a class="lien" href="{% url 'burger:index' %}"><li>{{ nombre_total_burger }} Burgers</li></a>
             <a class="lien" href="{% url 'salade:index' %}"><li>{{ nombre_total_salades }} Salades</li></a>
             <a class="lien" href="{% url 'pate:index' %}"><li>{{ nombre_total_pates }} Pates</li></a>
             <a class="lien" href="{% url 'dessert:index' %}"><li>{{ nombre_total_desserts }} Desserts</li></a>
-            <a class="lien" href="{% url 'affiche_menu:index' %}"><li>Notre carte</li></a>
           </ul>
+
+          <div class="search">
+            <h2>Votre recherche</h2>
+            <form method="get" action="{% url 'main:index' %}">
+              <input type="text" name="q" placeholder="ingredients, prix...">
+              <button type="submit">Rechercher</button>
+            </form>
+
+            {% if results %}
+              <h2>Résultats pour "{{ query }}"</h2>
+            {% endif %}
+            
+            {% for result in results %}
+              <h3>{{ result.type }} - {{ result.nom }} - {{ result.prix }} €</h3>
+              <p>{{ result.ingredients }}</p>
+            {% endfor %}
+          </div>
+
         </div>
       
         <div class="col-6 col-s-9 text">
@@ -57,24 +75,6 @@
         </div>
       
         <div class="col-4 col-s-9"> 
-          <div class="aside"> 
-            <div class="search">
-              <h2>Recherche</h2>
-              <form method="get" action="{% url 'main:index' %}">
-                <input type="text" name="q" placeholder="Rechercher...">
-                <button type="submit">Rechercher</button>
-              </form>
-
-              {% if results %}
-                <h2>Résultats pour "{{ query }}"</h2>
-              {% endif %}
-              
-              {% for result in results %}
-                <h3>{{ result.type }} - {{ result.nom }} - {{ result.prix }} €</h3>
-                <p>{{ result.ingredients }}</p>
-              {% endfor %}
-            </div>
-          </div>
           <div class="aside">
             <div class="galerie_produits">
               <h2>Galerie</h2>
